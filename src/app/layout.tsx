@@ -4,7 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import LoginButton from "@/app/components/ui/LoginButton";
 
-const gamjaFlower = Gamja_Flower({ weight: "400" });
+const gamjaFlower = Gamja_Flower({ weight: "400", subsets: ["latin"], });
 
 export const metadata: Metadata = {
   title: "creric rewind",
