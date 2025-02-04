@@ -1,12 +1,22 @@
 import { betterAuth } from "better-auth";
-import { Pool } from "@vercel/postgres";
+import { nextCookies } from "better-auth/next-js";
+import { username } from "better-auth/plugins";
+import { Pool } from "pg";
 
 export const auth = betterAuth({
   database: new Pool({
-    user: process.env.PGUSER,
-    password: process.env.PGPASSWORD,
-    host: process.env.PGHOST,
-    port: Number(process.env.PGPORT),
-    database: process.env.PGDATABASE,
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   }),
+  
+  plugins: [
+    username(),
+    nextCookies(),
+  ],
+
+  emailAndPassword: {
+    enabled: true,
+  },
 });

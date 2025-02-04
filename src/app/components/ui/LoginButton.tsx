@@ -1,15 +1,24 @@
 "use client"
 
+import { authClient } from "@/utils/auth-client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function LoginButton() {
   const [loggedIn, setLoggedIn] = useState(false);
 
-  setLoggedIn(false); // temp to ignore build errors
   // check login status and update button accordingly
   // if logged in, login button should redirect to blog
-  // useEffect(() => {}, []);
+  useEffect(() => {
+    const checkLoginStatus = async () => {
+      const session = await authClient.getSession();
+      if (session) {
+        setLoggedIn(true);
+      }
+    };
+
+    checkLoginStatus();
+  }, []);
 
   return (
     <Link
