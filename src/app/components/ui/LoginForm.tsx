@@ -17,10 +17,10 @@ export default function LoginForm() {
         username: username,
         password: password,
       }, {
-        onRequest: (ctx) => {
+        onRequest: () => {
           setIsLoading(true);
         },
-        onSuccess: (ctx) => {
+        onSuccess: () => {
           router.push('/notes');
           setIsLoading(false);
         },
