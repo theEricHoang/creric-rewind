@@ -9,8 +9,6 @@ import { authClient } from "@/utils/auth-client";
 export default function NavBar() {
   const {
     data: session,
-    isPending,
-    error
   } = authClient.useSession();
 
   return (
