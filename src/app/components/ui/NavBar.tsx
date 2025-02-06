@@ -12,7 +12,7 @@ export default function NavBar() {
   } = authClient.useSession();
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/30 backdrop-blur-md p-2 shadow-lg">
+    <nav className="fixed z-30 top-0 left-0 w-full bg-white/30 backdrop-blur-md p-2 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         <Link className="font-bold text-5xl" href="/">
           creric rewind ♥

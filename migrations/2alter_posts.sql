@@ -1,0 +1,1 @@
+alter table posts rename column "from" to author;
