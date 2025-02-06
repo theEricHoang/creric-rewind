@@ -1,12 +1,9 @@
+"use client";
+
 import { useState } from "react";
 import NewNoteModal from "../NewNoteModal";
-import { Note } from "@/app/actions/note-dao";
 
-export default function NewNoteButton({
-  setNotes
-}: {
-  setNotes: React.Dispatch<React.SetStateAction<Note[]>>;
-}) {
+export default function NewNoteButton() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -19,7 +16,7 @@ export default function NewNoteButton({
       </button>
 
       {isModalOpen &&
-        <NewNoteModal setNotes={setNotes} onClose={() => setIsModalOpen(false)} />
+        <NewNoteModal onClose={() => setIsModalOpen(false)} />
       }
     </>
   );

@@ -1,6 +1,7 @@
 "use server";
 
 import { pool } from "@/utils/db";
+import { revalidatePath } from "next/cache";
 
 export type Note = {
   id: number;
@@ -16,6 +17,7 @@ export async function createNote(formData: FormData) {
   try {
     const result = await pool.query<Note>("INSERT INTO posts (author, content) VALUES ($1, $2) RETURNING id, author, content, created", [author, content]);
     const newNote = result.rows[0];
+    revalidatePath('/notes');
     return newNote;
   } catch (error) {
     console.error(error);

@@ -1,21 +1,14 @@
-"use client";
-
-import { Note } from "@/app/actions/note-dao";
+import { getNotesByCreated } from "@/app/actions/note-dao";
 import NoteCard from "./NoteCard";
-import { useState } from "react";
 import NewNoteButton from "./ui/NewNoteButton";
 
-export default function NoteList({
-  initialNotes
-}: {
-  initialNotes: Note[]
-}) {
-  const [notes, setNotes] = useState<Note[]>(initialNotes);
+export default async function NoteList() {
+  const notes = await getNotesByCreated();
 
   return (
     <>
       <div className="flex flex-1 justify-end">
-        <NewNoteButton setNotes={setNotes} />
+        <NewNoteButton />
       </div>
 
       <ul>

@@ -1,12 +1,10 @@
-import { createNote, Note } from "@/app/actions/note-dao";
+import { createNote } from "@/app/actions/note-dao";
 import React, { useState } from "react";
 
 export default function NewNoteModal({
   onClose,
-  setNotes
 }: {
   onClose: () => void;
-  setNotes: React.Dispatch<React.SetStateAction<Note[]>>;
 }) {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -16,9 +14,6 @@ export default function NewNoteModal({
 
     try {
       const newNote = await createNote(new FormData(e.currentTarget));
-      if (newNote) {
-        setNotes((prevNotes) => [newNote, ...prevNotes]);
-      }
       onClose();
     } catch (error) {
       console.error("error creating note:", error);
