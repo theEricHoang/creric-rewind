@@ -16,9 +16,9 @@ export default function NoteCard({
       className="relative border border-white/30 rounded-md bg-gradient-to-tr from-white/5 to-white/20 backdrop-blur-lg p-4 my-4 shadow-lg"
     >
       <button
-        className="absolute top-2 right-2 w-10 h-10 flex items-center justify-center text-2xl font-bold rounded-full hover:bg-white/20"
+        className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center text-2xl font-bold rounded-full hover:bg-white/20"
       >
-        <span className="leading-none text-white">...</span>
+        <span className="inline-block align-text-top text-white">...</span>
       </button>
 
       <h1 className="text-3xl text-white">

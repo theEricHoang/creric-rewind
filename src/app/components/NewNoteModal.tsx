@@ -13,7 +13,7 @@ export default function NewNoteModal({
     setIsLoading(true);
 
     try {
-      const newNote = await createNote(new FormData(e.currentTarget));
+      await createNote(new FormData(e.currentTarget));
       onClose();
     } catch (error) {
       console.error("error creating note:", error);
@@ -24,7 +24,7 @@ export default function NewNoteModal({
 
   return (
     <div
-      className="z-10 fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+      className="z-20 fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm"
       onClick={onClose}
     >
       <form
