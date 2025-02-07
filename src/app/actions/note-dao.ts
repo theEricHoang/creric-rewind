@@ -28,3 +28,12 @@ export async function getNotesByCreated(): Promise<Note[]> {
   const result = await pool.query<Note>("SELECT * FROM posts ORDER BY created DESC");
   return result.rows;
 }
+
+export async function deleteNote(noteId: number) {
+  try {
+    await pool.query("DELETE FROM posts WHERE id = $1", [noteId]);
+    revalidatePath('/notes');
+  } catch (error) {
+    console.error(error);
+  }
+}
