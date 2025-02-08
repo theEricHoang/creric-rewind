@@ -3,6 +3,11 @@
 import { pool } from "@/utils/db";
 import { revalidatePath } from "next/cache";
 
+// for testing
+// async function sleep(ms: number) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
+
 export type Note = {
   id: number;
   author: string;
@@ -26,6 +31,7 @@ export async function createNote(formData: FormData) {
 
 export async function getNotesByCreated(): Promise<Note[]> {
   const result = await pool.query<Note>("SELECT * FROM posts ORDER BY created DESC");
+  // await sleep(3000);
   return result.rows;
 }
 

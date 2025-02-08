@@ -5,10 +5,12 @@ import LoginButton from "./LoginButton";
 import NotesButton from "./NotesButton";
 import LogoutButton from "./LogoutButton";
 import { authClient } from "@/utils/auth-client";
+import ButtonSkeleton from "./ButtonSkeleton";
 
 export default function NavBar() {
   const {
     data: session,
+    isPending,
   } = authClient.useSession();
 
   return (
@@ -18,14 +20,23 @@ export default function NavBar() {
           creric rewind ♥
         </Link>
         
-        {session
-          ? (
-            <div className="flex gap-2">
-              <NotesButton />
-              <LogoutButton />
-            </div>
-          )
-          : <LoginButton />}
+        {isPending &&
+          <div className="flex gap-2">
+            <ButtonSkeleton />
+            <ButtonSkeleton />
+          </div>
+        }
+
+        {session && !isPending &&
+          <div className="flex gap-2">
+            <NotesButton />
+            <LogoutButton />
+          </div>
+        }
+
+        {!session && !isPending &&
+          <LoginButton />
+        }
       </div>
     </nav>
   );
