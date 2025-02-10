@@ -1,8 +1,11 @@
+"use client";
+
 import Markdown from "react-markdown";
 import { Note } from "../actions/note-dao";
 import remarkGfm from "remark-gfm";
 import { formatDistanceToNowStrict } from "date-fns";
 import NoteCardDropdown from "./ui/NoteCardDropdown";
+import { motion } from "motion/react";
 
 export default function NoteCard({
   note
@@ -12,9 +15,12 @@ export default function NoteCard({
   const humanizedDate = formatDistanceToNowStrict(new Date(note.created), { addSuffix: true })
 
   return (
-    <li
+    <motion.li
       key={note.id}
       className="relative border border-white/30 rounded-md bg-gradient-to-tr from-white/5 to-white/20 backdrop-blur-lg p-4 my-4 shadow-lg"
+      initial={{ scale: 0, opacity: 1 }}
+      whileInView={{ scale: 1, opacity: 1}}
+      viewport={{ once: true }}
     >
       <NoteCardDropdown note={note} />
 
@@ -27,6 +33,6 @@ export default function NoteCard({
       <time className="italic flex justify-end">
         {humanizedDate}
       </time>
-    </li>
+    </motion.li>
   );
 }

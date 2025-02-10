@@ -3,6 +3,7 @@ import { authClient } from "@/utils/auth-client";
 import { APIError } from "better-auth/api";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 export default function LoginForm() {
   const [username, setUsername] = useState('');
@@ -54,14 +55,16 @@ export default function LoginForm() {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button
+      <motion.button
         className="p-2 border-white/40 border shadow-md rounded-md text-2xl hover:bg-white/30 mt-5"
         type="submit"
         onClick={login}
         disabled={isLoading}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
       >
         {isLoading ? "going..." : "go go go!!!"}
-      </button>
+      </motion.button>
     </form>
   );
 }

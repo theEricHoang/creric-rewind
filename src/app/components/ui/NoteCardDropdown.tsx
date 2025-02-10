@@ -1,6 +1,7 @@
 "use client";
 
 import { deleteNote, Note } from "@/app/actions/note-dao";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 export default function NoteCardDropdown({
@@ -41,19 +42,24 @@ export default function NoteCardDropdown({
         <span className="inline-block align-text-top absolute -top-1.5 text-white">...</span>
       </button>
 
-      {isVisible &&
-        <div
-          ref={dropdownRef}
-          className="absolute top-11 right-3 bg-white rounded-md shadow-lg"
-        >
-          <button
-            className="text-red-500 text-xl block w-full text-left p-2 hover:bg-black/30 rounded-md"
-            onClick={handleDeletePost}
+      <AnimatePresence>
+        {isVisible &&
+          <motion.div
+            ref={dropdownRef}
+            className="absolute top-11 right-3 bg-white rounded-md shadow-lg"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
           >
-            delete 🗑️
-          </button>
-        </div>
-      }
+            <button
+              className="text-red-500 text-xl block w-full text-left p-2 hover:bg-black/30 rounded-md"
+              onClick={handleDeletePost}
+            >
+              delete 🗑️
+            </button>
+          </motion.div>
+        }
+      </AnimatePresence>
     </>
   );
 }
