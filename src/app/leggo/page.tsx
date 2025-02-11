@@ -1,5 +1,9 @@
+import Greeting from "../components/slides/Greeting";
+
 export default function LeggoPage() {
   return (
-    <p>i love u</p>
+    <div className="flex flex-col">
+      <Greeting />
+    </div>
   );
 }

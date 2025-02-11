@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import NewNoteModal from "../NewNoteModal";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 
 export default function NewNoteButton() {
   const [isModalOpen, setIsModalOpen] = useState(false);

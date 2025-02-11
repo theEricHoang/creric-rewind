@@ -1,6 +1,6 @@
 import { createNote } from "@/app/actions/note-dao";
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 
 export default function NewNoteModal({
   onClose,
