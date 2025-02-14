@@ -1,4 +1,4 @@
-import Link from "next/link";
+import LeggoButton from "./components/ui/LeggoButton";
 
 export default function Home() {
   return (
@@ -8,12 +8,7 @@ export default function Home() {
           welcome to creric rewind!
         </h1>
 
-        <Link
-          className="p-2 border-white/40 border-2 shadow-md rounded-md text-3xl hover:bg-white/30"
-          href="/leggo"
-        >
-          leggo →
-        </Link>
+        <LeggoButton />
       </div>
     </div>
   );
