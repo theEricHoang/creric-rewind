@@ -16,7 +16,7 @@ export default function End() {
       className="flex flex-col h-[100vh] bg-white items-center justify-center"
     >
       <p className="text-red-700 text-4xl text-center m-36">
-        Thanks for joining me on this journey baby! I'm so lucky I can call u mine and u call me yours 🥹 click the button below so we can tell each other how much we love each other ❤️
+        Thanks for joining me on this journey baby! I&apos;m so lucky I can call u mine and u call me yours 🥹 click the button below so we can tell each other how much we love each other ❤️
       </p>
       {
         isPending &&

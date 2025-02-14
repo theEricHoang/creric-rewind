@@ -26,7 +26,7 @@ export default function HowLong() {
       >
         <div className="h-[100vh] grow w-[50vw] flex items-center justify-center">
           <p className="text-6xl font-bold">
-            so far, we've dated for
+            so far, we&apos;ve dated for
           </p>
         </div>
 
