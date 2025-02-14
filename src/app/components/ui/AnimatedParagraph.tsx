@@ -11,7 +11,7 @@ export default function AnimatedParagraph({
   const container = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ['start end', 'start 0.4']
+    offset: ['start 0.7', 'start 0.4']
   });
   const words = paragraph.split(" ");
 
