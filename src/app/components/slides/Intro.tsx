@@ -24,7 +24,7 @@ export default function Intro() {
     offset: ["start end", "end start"],
   });
   const parallaxOffset1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const parallaxOffset2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const parallaxOffset2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   const introParagraph = "there was a chill guy who had a crush on the pretty girl in his chemistry class...";
   const images = [
