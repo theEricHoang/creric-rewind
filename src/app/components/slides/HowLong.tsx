@@ -10,14 +10,14 @@ export default function HowLong() {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope);
 
+  const daysSince = differenceInDays(new Date(), new Date('2024-05-09'));
+
   useEffect(() => {
     if (isInView) {
       const controls = animate(dayCount, daysSince, { duration: 2 });
       return () => controls.stop();
     }
-  }, [isInView]);
-
-  const daysSince = differenceInDays(new Date(), new Date('2024-05-09'));
+  }, [isInView, animate, dayCount, daysSince]);
 
   return(
     <div ref={scope} className="h-[150vh] flex overflow-visible bg-gradient-to-b from-indigo-400 to-rose-400 z-[1]">

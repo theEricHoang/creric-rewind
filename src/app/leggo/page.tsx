@@ -1,3 +1,4 @@
+import FavSongs from "../components/slides/FavSongs";
 import FirstKiss from "../components/slides/FirstKiss";
 import Greeting from "../components/slides/Greeting";
 import HowLong from "../components/slides/HowLong";
@@ -14,6 +15,7 @@ export default function LeggoPage() {
       <IntroThree />
       <HowLong />
       <FirstKiss />
+      <FavSongs />
     </div>
   );
 }
