@@ -1,3 +1,4 @@
+import End from "../components/slides/End";
 import FavSongs from "../components/slides/FavSongs";
 import FirstKiss from "../components/slides/FirstKiss";
 import Greeting from "../components/slides/Greeting";
@@ -18,6 +19,7 @@ export default function LeggoPage() {
       <FirstKiss />
       <FavSongs />
       <ImageWall />
+      <End />
     </div>
   );
 }

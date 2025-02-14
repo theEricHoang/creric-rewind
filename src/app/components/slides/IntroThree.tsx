@@ -23,7 +23,7 @@ export default function IntroThree() {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black to-transparent z-[1]" />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black to-transparent z-[1]" ref={container} />
 
       {/* Animated Text */}
       <motion.div
