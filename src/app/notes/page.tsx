@@ -15,3 +15,5 @@ export default function Notes() {
     </div>
   );
 }
+
+export const dynamic = 'force-dynamic';
