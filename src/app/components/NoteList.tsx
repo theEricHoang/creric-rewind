@@ -19,3 +19,5 @@ export default async function NoteList() {
     </>
   );
 }
+
+export const dynamic = "force-dynamic";
